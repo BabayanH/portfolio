@@ -81,9 +81,9 @@ const Skills = () => {
             className="w-full h-auto"
             preload="false"
             playsInline
+            autoPlay
             loop
             muted
-            autoPlay
             src="/cards-video.webm"
           />
         </div>
