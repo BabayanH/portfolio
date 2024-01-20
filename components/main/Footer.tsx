@@ -41,7 +41,7 @@ const Footer = () => {
             </p>
 
             <a
-              href="mailto:babayanhovsep01@gmail.com"
+              href="mailto:hovbabayan22@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
