@@ -53,7 +53,7 @@ const Encryption = () => {
           muted
           autoPlay
           playsInline
-          preload="none"
+          preload="false"
           className="w-full h-auto"
           src="/encryption.webm/"
         />
