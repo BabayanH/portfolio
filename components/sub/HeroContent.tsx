@@ -17,7 +17,7 @@ const HeroContent = () => {
         <div className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]">
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
+            Hovsep&apos;s Portfolio
           </h1>
         </div>
 
@@ -32,12 +32,15 @@ const HeroContent = () => {
           </span>
         </div>
 
-        <p className="text-lg text-gray-400 my-5 max-w-[600px]">
-          Hi I&apos;m Hovsep Computer Science graduate from the University of
-          Cal Poly Pomona.Dive into my portfolio and discover a showcase of
-          innovative projects that reflect my journey and capabilities. From
-          intricate web designs to sophisticated mobile applications.
-        </p>
+       <div className="box">
+          <p className="text-lg text-gray-400 my-5 max-w-[600px] text-justify">
+            Hi I&apos;m Hovsep Babayan Computer Science graduate from the
+            University of Cal Poly Pomona. Dive into my portfolio and discover a
+            showcase of innovative projects that reflect my journey and
+            capabilities. From intricate web designs to sophisticated mobile
+            applications.
+          </p>
+        </div>
         {/* <a className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]">
           Learn More!
         </a> */}
