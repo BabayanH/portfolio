@@ -22,6 +22,16 @@ const Projects = () => {
           url="https://play.google.com/store/apps/details?id=babayah01.example.easyvalet1&hl=en&gl=US"
         />
         <ProjectCard
+          src="/socalpic.png"
+          description="Fully mobile responsive React website for a valet company."
+          url="https://www.socalparking.com/"
+        />
+        <ProjectCard
+          src="/xpress.png"
+          description="Fully mobile responsive website for an Electrical Services company."
+          url="https://www.express-electricinc.com/"
+        />
+        <ProjectCard
           src="/reactMeal.png"
           description="An online food ordering interactive React application, where I master working with carts and improve my UX/UI skills."
           url="https://order-reacthb.netlify.app/"
