@@ -1,36 +1,39 @@
+// components/sub/SkillDataProvider.tsx
 "use client";
-
-import React from "react";
-// import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import React from "react";
 
 interface Props {
   src: string;
-  width: number;
-  height: number;
-  index: number;
+  name?: string;
 }
 
-const SkillDataProvider = ({ src, width, height, index }: Props) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-  });
+export default function SkillDataProvider({ src, name }: Props) {
+  const [broken, setBroken] = React.useState(false);
 
-  const imageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  const animationDelay = 0.3;
   return (
-    <div
-      ref={ref}
-      
-    >
-      <Image src={src} width={width} height={height} alt="skill image" />
+    <div className="group flex flex-col items-center justify-center">
+      <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm grid place-items-center transition-transform duration-200 group-hover:scale-105">
+        {!broken ? (
+          <Image
+            src={src}
+            alt={name || "skill"}
+            width={64}
+            height={64}
+            className="w-10 h-10 md:w-12 md:h-12 object-contain"
+            onError={() => setBroken(true)}
+          />
+        ) : (
+          <span className="text-xs md:text-sm text-gray-200 px-2 text-center">
+            {name || "Skill"}
+          </span>
+        )}
+      </div>
+      {name && (
+        <span className="mt-2 text-xs md:text-sm text-gray-300 opacity-90">
+          {name}
+        </span>
+      )}
     </div>
   );
-};
-
-export default SkillDataProvider;
+}

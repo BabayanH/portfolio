@@ -1,3 +1,5 @@
+// constants.ts
+
 export const Skill_data = [
   {
     skill_name: "Html 5",
@@ -243,4 +245,9 @@ export const Other_skill = [
     width: 60,
     height: 60,
   },
+
+  // --- Added languages ---
+  { skill_name: "C", Image: "/c.svg", width: 64, height: 64 },
+  { skill_name: "C++", Image: "/cpp.svg", width: 64, height: 64 },
+  { skill_name: "Java", Image: "/java.svg", width: 64, height: 64 },
 ];

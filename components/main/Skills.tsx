@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Backend_skill,
   Frontend_skill,
@@ -5,91 +6,70 @@ import {
   Other_skill,
   Skill_data,
 } from "@/constants";
-import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
+import StarsCanvas from "../sub/StarsCanvas";
 
-const Skills = () => {
+// normalize to build a unique key per logo
+const keyOf = (s: any) =>
+  ((s?.Image as string) || (s?.skill_name as string) || "")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "");
+
+type SkillItem = { Image: string; skill_name?: string };
+
+export default function Skills() {
+  // merge all arrays, dedupe while preserving first occurrence order
+  const merged: SkillItem[] = [
+    ...Skill_data,
+    ...Frontend_skill,
+    ...Backend_skill,
+    ...Full_stack,
+    ...Other_skill,
+  ];
+  const seen = new Set<string>();
+  const unique = merged.filter((s) => {
+    const k = keyOf(s);
+    if (!k || seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20"
-      style={{ transform: "scale(0.9" }}
+      className="relative flex flex-col items-center justify-center gap-6 py-12 sm:py-16 md:py-20"
+      style={{ transform: "scale(0.9)" }}
     >
+      {/* animated background */}
+      <StarsCanvas />
+
       <SkillText />
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Skill_data.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Frontend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Backend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Full_stack.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Other_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-
-      <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video
-            className="w-full h-auto"
-            preload="false"
-            playsInline
-            autoPlay
-            loop
-            muted
-            src="/cards-video.webm"
-          />
+      {/* tidy, responsive grid — no more ragged edges */}
+      <div className="w-full max-w-7xl mx-auto px-6">
+        <div
+          className="
+            grid
+            grid-cols-3
+            sm:grid-cols-4
+            md:grid-cols-6
+            lg:grid-cols-8
+            xl:grid-cols-10
+            gap-6 md:gap-8
+            place-items-center
+          "
+        >
+          {unique.map((s, i) => (
+            <SkillDataProvider
+              key={keyOf(s) || i}
+              src={s.Image}
+              name={s.skill_name}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default Skills;
+}

@@ -61,7 +61,7 @@
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
-
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 72px; /* add this line; navbar is ~65px tall */
 }

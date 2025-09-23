@@ -1,0 +1,5 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C++ logo" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="32" fill="#3949AB"></rect>
+  <text x="50%" y="57%" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="120" font-weight="700">C++</text>
+</svg>

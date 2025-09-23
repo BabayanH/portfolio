@@ -4,13 +4,14 @@ import ProjectCard from "../sub/ProjectCard";
 const Projects = () => {
   return (
     <div
-      className="flex flex-col items-center justify-center py-20"
+      className="flex flex-col items-center justify-center py-12 sm:py-16 md:py-20"
       id="projects"
     >
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
+      <h1 className="text-[32px] sm:text-[36px] md:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10 sm:py-12 md:py-16">
         My Projects
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-10">
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 md:px-10">
         <ProjectCard
           src="/ulyfe.png"
           description="Anonymous discussion forum. Dedicated dating section with advanced matching algorithms. Events dashboard for user-created and organization-endorsed events."
@@ -53,15 +54,14 @@ const Projects = () => {
         />
         <ProjectCard
           src="/Bankist.png"
-          description="An interactive application developed with Javascript. I learned all types of UI interactive features."
+          description="An interactive application developed by Javascript. I learned all types of UI interactive features."
           url="https://my-bankist.netlify.app/"
         />
         <ProjectCard
           src="/chart.png"
-          description="This application was built with React and Firabase and it will help to keep track of your monthly and annual expenses."
+          description="This application was built with React and Firebase and it will help to keep track of your monthly and annual expenses."
           url="https://chart-react.netlify.app/"
         />
-
         <ProjectCard
           src="/reactToDo.png"
           description="A To-Do application built with React that will help you keep track of the things you are planning to do."
