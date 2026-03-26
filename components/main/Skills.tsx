@@ -9,6 +9,7 @@ import {
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 import StarsCanvas from "../sub/StarsCanvas";
+import Container from "@/components/ui/Container";
 
 // normalize to build a unique key per logo
 const keyOf = (s: any) =>
@@ -40,7 +41,6 @@ export default function Skills() {
     <section
       id="skills"
       className="relative flex flex-col items-center justify-center gap-6 py-12 sm:py-16 md:py-20"
-      style={{ transform: "scale(0.9)" }}
     >
       {/* animated background */}
       <StarsCanvas />
@@ -48,7 +48,7 @@ export default function Skills() {
       <SkillText />
 
       {/* tidy, responsive grid — no more ragged edges */}
-      <div className="w-full max-w-7xl mx-auto px-6">
+      <Container>
         <div
           className="
             grid
@@ -69,7 +69,7 @@ export default function Skills() {
             />
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

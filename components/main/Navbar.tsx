@@ -3,6 +3,7 @@
 
 import React, { useState, useCallback } from "react";
 import Image from "next/image";
+import Container from "@/components/ui/Container";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -39,8 +40,8 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 inset-x-0 z-50">
       {/* Top bar */}
-      <div className="w-full h-[65px] shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md px-4 sm:px-6 md:px-10">
-        <div className="h-full w-full max-w-7xl mx-auto flex items-center justify-between">
+      <div className="w-full h-[65px] shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md">
+        <Container className="h-full flex items-center justify-between">
           {/* Left: logo/title */}
           <a href="#about-me" className="flex items-center gap-2">
             {/* If you have a logo, uncomment: */}
@@ -81,7 +82,7 @@ const Navbar = () => {
               <path d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-        </div>
+        </Container>
       </div>
 
       {/* Mobile panel */}

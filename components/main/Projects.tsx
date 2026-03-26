@@ -1,32 +1,45 @@
 import React from "react";
 import ProjectCard from "../sub/ProjectCard";
+import Container from "@/components/ui/Container";
 
 const Projects = () => {
   return (
     <div
-      className="flex flex-col items-center justify-center py-12 sm:py-16 md:py-20"
+      className="w-full py-12 sm:py-16 md:py-20"
       id="projects"
     >
-      <h1 className="text-[32px] sm:text-[36px] md:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10 sm:py-12 md:py-16">
-        My Projects
-      </h1>
+      <Container className="flex flex-col items-center justify-center">
+        <h1 className="text-[32px] sm:text-[36px] md:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10 sm:py-12 md:py-16">
+          My Projects
+        </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+        <ProjectCard
+          src="/kiddiesystem.png"
+          description="Built a full-stack management system for an indoor playground to track transactions, manage private events, and analyze business performance using React, Firebase, and real-time data."         
+          url="https://kidsystem.vercel.app/"
+        />
+        <ProjectCard
+          src="/kiddieweb.png"
+          description="Developed a fully responsive React website for an indoor playground to showcase services, pricing, and event offerings, improving customer engagement and bookings."         
+          url="https://www.kiddiekingdomplayground.com/"
+        />
         <ProjectCard
           src="/ulyfe.png"
           description="Anonymous discussion forum. Dedicated dating section with advanced matching algorithms. Events dashboard for user-created and organization-endorsed events."
           url="https://cs480-projects.github.io/teams-fall2023/Unimatch/team.html"
+        />
+          <ProjectCard
+          src="/socalpic.png"
+          description="Fully mobile responsive React website for a valet company."
+          url="https://www.socalparking.com/"
         />
         <ProjectCard
           src="/easyvalet.png"
           description="Mobile App for valet companies to transition into digital services. Replaces tickets in valet."
           url="https://play.google.com/store/apps/details?id=babayah01.example.easyvalet1&hl=en&gl=US"
         />
-        <ProjectCard
-          src="/socalpic.png"
-          description="Fully mobile responsive React website for a valet company."
-          url="https://www.socalparking.com/"
-        />
+      
         <ProjectCard
           src="/xpress.png"
           description="Fully mobile responsive website for an Electrical Services company."
@@ -68,6 +81,7 @@ const Projects = () => {
           url="https://todo1-react.netlify.app/"
         />
       </div>
+      </Container>
     </div>
   );
 };
