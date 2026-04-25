@@ -24,6 +24,16 @@ const Projects = () => {
           description="Developed a fully responsive React website for an indoor playground to showcase services, pricing, and event offerings, improving customer engagement and bookings."         
           url="https://www.kiddiekingdomplayground.com/"
         />
+         <ProjectCard
+          src="/liquidty.png"
+          description="Financial analytics system that forecasts cash balances, models interest rate sensitivity (NII), and evaluates credit risk using machine learning and interactive dashboards."
+          url="https://github.com/BabayanH/financial-analytics-dashboard/blob/main/README.md"
+        />
+         <ProjectCard
+          src="/monthly_revenue.png"
+          description="Data analytics project using real retail data to analyze revenue trends, identify high-value customers, and segment users with SQL, machine learning, and dashboards."
+          url="https://github.com/BabayanH/customer-analytics-dashboard/blob/main/README.md"
+        />
         <ProjectCard
           src="/ulyfe.png"
           description="Anonymous discussion forum. Dedicated dating section with advanced matching algorithms. Events dashboard for user-created and organization-endorsed events."
@@ -38,12 +48,6 @@ const Projects = () => {
           src="/easyvalet.png"
           description="Mobile App for valet companies to transition into digital services. Replaces tickets in valet."
           url="https://play.google.com/store/apps/details?id=babayah01.example.easyvalet1&hl=en&gl=US"
-        />
-      
-        <ProjectCard
-          src="/xpress.png"
-          description="Fully mobile responsive website for an Electrical Services company."
-          url="https://www.express-electricinc.com/"
         />
         <ProjectCard
           src="/reactMeal.png"
