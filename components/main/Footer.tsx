@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="mt-5 p-8 flex flex-col gap-5 items-center text-gray-100">
             <p>
               <a
-                href="files/Hovsep Babayan Resume.pdf"
+                href="files/Hovsep Babayan Resume-SWE.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
